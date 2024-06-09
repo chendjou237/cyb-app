@@ -8,14 +8,14 @@ import 'package:test1/utils/toast.dart';
 
 import '../widgets/widgets.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
 /*   final _formKey = GlobalKey<FormState>(); // Key for form validation
   final String _username = '';
   String _password = '';
@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Sign Up'),
       ),
       body: BlocProvider(
         create: (context) => LoginBloc(authenticationRepository: AuthenticationRepository()),
@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
               // TODO: implement listener
             },
             child: 
-             const AuthForm(type: SubmitType.login,),
+             const AuthForm(type: SubmitType.signup,),
           ),
         ),
       ),

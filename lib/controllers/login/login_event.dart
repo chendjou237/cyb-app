@@ -26,5 +26,10 @@ final class LoginPasswordChanged extends LoginEvent {
 }
 
 final class LoginSubmitted extends LoginEvent {
-  const LoginSubmitted();
+  const LoginSubmitted(this.type);
+  final SubmitType type;
+}
+
+enum SubmitType {
+  signup, login
 }

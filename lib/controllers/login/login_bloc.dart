@@ -52,10 +52,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (state.isValid) {
       emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
       try {
+        if (event.type == SubmitType.signup) {
+          await _authenticationRepository.signUpWithEmailAndPassword(
+            state.email.value,
+            state.password.value,
+          );
+        } else if (event.type == SubmitType.login) {
         await _authenticationRepository.signInWithEmailAndPassword(
            state.email.value,
            state.password.value,
         );
+        }
         emit(state.copyWith(status: FormzSubmissionStatus.success));
       } catch (_) {
         emit(state.copyWith(status: FormzSubmissionStatus.failure));

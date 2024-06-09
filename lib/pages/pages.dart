@@ -1,0 +1,9 @@
+export 'generate_key_view.dart';
+export 'history_view.dart';
+export 'home.dart';
+export 'introduction_view.dart';
+export 'login.dart';
+export 'result_view.dart';
+export 'scan_view.dart';
+export 'signup.dart';
+export 'update_view.dart';

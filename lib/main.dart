@@ -1,11 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:test1/config/observers/bloc_observer.dart';
 import 'package:test1/config/router.dart';
 import 'package:test1/controllers/auth/auth_cubit.dart';
+import 'package:test1/controllers/scan/cubit/scan_cubit.dart';
 import 'package:test1/repositories/auth_repo.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+
 import 'firebase_options.dart';
 
 void main() async{
@@ -15,7 +17,7 @@ void main() async{
   options: DefaultFirebaseOptions.currentPlatform,
 );
 await Hive.initFlutter();
- await Hive.openBox<bool>('first_run', );
+ await Hive.openBox('settings', );
   Bloc.observer = AppBlocObserver();
 
   runApp(const MyApp());
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
          BlocProvider(create: (context) => AuthCubit(AuthenticationRepository())),
+         BlocProvider(create: (context) => ScanCubit()..getScanHistory()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

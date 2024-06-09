@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:test1/pages/generate_key_view.dart';
-import 'package:test1/pages/history_view.dart';
-import 'package:test1/pages/home.dart';
-import 'package:test1/pages/introduction_view.dart';
-import 'package:test1/pages/login.dart';
-import 'package:test1/pages/result_view.dart';
-import 'package:test1/pages/scan_view.dart';
-import 'package:test1/pages/update_view.dart';
+import 'package:test1/pages/pages.dart';
+
 import 'package:test1/repositories/auth_repo.dart';
 import 'package:test1/utils/is_first_run.dart';
  final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -32,6 +26,14 @@ final router = GoRouter(
       }
   },
     ),
+    GoRoute(path: '/signup', builder: (context, state) => const SignUpPage(), redirect: (context, state) {
+      final user = AuthenticationRepository().user;
+      if (user != null) {
+        return '/';
+      } else {
+        return null;
+      }
+      }),
     ShellRoute(
         navigatorKey: _shellNavigatorKey,
  builder: (BuildContext context, GoRouterState state, Widget child) {
