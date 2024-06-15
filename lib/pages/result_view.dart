@@ -27,7 +27,7 @@ class ResultView extends StatelessWidget {
             if (state is ScanError ) {
               errorToast('error detected');
             }
-            if (state is ScanRecordComplete) {
+            if (state is ScanRecordComplete) { 
               context.read<ScanCubit>().getScanHistory();
               successToast('scan recorded successfully');
               context.go('/');

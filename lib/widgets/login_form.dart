@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test1/controllers/login/login_bloc.dart';
 import 'package:test1/widgets/widgets.dart';
+import 'package:lottie/lottie.dart';
 
 class AuthForm extends StatelessWidget {
    final SubmitType type;
@@ -16,6 +17,13 @@ class AuthForm extends StatelessWidget {
     return  Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(
+                  
+                      child: Lottie.asset(
+                          'animations/auth.json',
+                         height: 100,
+                          width: 100,
+                          fit: BoxFit.fill)),
         const EmailField(),
         const SizedBox(height: 16.0), // Add spacing between fields
         const PasswordField(),
