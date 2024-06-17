@@ -10,7 +10,6 @@ const IntroductionView({ super.key });
       body: "Detect and remove viruses, malware, and other malicious software before they can harm your device.",
       image: Center(child: Image.asset("assets/images/scan.png", height: 175.0)),
       decoration: const PageDecoration(
-        pageColor: Colors.blue,
       ),
     ),
     PageViewModel(
@@ -18,7 +17,6 @@ const IntroductionView({ super.key });
       body: "Keep your apps up to date to protect your device from security vulnerabilities.",
       image: Center(child: Image.asset("assets/images/update.png", height: 175.0)),
       decoration: const PageDecoration(
-        pageColor: Colors.blue,
       ),
     ),
     PageViewModel(
@@ -26,7 +24,6 @@ const IntroductionView({ super.key });
       body: "Use strong, unique passwords to protect your accounts from unauthorized access.",
       image: Center(child: Image.asset("assets/images/generate_key.png", height: 175.0)),
       decoration: const PageDecoration(
-        pageColor: Colors.blue,
       ),
     ),
   

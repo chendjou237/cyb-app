@@ -57,7 +57,7 @@ void initState() {
                 },
                 child: RippleWave(
                   childTween: Tween(begin: 0.01, end: 1.0),
-              color: Colors.blueAccent,
+              color: Colors.purpleAccent,
               repeat: false,
               animationController: _controller,
                   child:  CircleAvatar(
